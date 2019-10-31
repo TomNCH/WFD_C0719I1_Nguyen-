@@ -1,14 +1,16 @@
 
 <div class="text-center">
+  <a routerLink="/">Home page</a>
   <table border="1" style="width: 70%">
     <tr>
       <td colspan="2"><h3>Reading List</h3></td>
     </tr>
     <tr *ngFor="let book of bookList,index as i">
-      <td [ngClass]="book.check === true ? 'done' : '' ">{{book.name}}</td>
+      <td>{{book.name}}</td>
       <td><button (click)="seen(i)" >Read</button></td>
     </tr>
   </table>
-
+  <a routerLink="/add-book">Seen page</a><br>
   <button [routerLink]="'/create-book'" >Create book</button>
 </div>
+
