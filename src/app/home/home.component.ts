@@ -27,11 +27,11 @@ export class HomeComponent implements OnInit {
     const book = this.bookList[i];
     const bookData = {
       ...book,
-      check: !book.check
+      check: !book.read
     };
     this.bookService.editBook(bookData).subscribe(
       next => {
-        this.bookList[i].check = next.check;
+        this.bookList[i].read = next.read;
       });
   }
 }

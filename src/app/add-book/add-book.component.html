@@ -6,9 +6,9 @@
       <td colspan="2"><h3>Complete Book</h3></td>
     </tr>
     <tr *ngFor="let book of bookList,index as i">
-      <td>{{book.name}}</td>
-      <td>Completed</td>
+      <td *ngIf="!book.read">{{book.name}}</td>
+      <td *ngIf="!book.read">Completed</td>
     </tr>
   </table>
-  <a routerLink="/">Reading page</a>
+  <a routerLink="/home-book">Reading page</a>
 </div>

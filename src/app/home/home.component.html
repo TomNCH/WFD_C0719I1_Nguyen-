@@ -6,8 +6,8 @@
       <td colspan="2"><h3>Reading List</h3></td>
     </tr>
     <tr *ngFor="let book of bookList,index as i">
-      <td>{{book.name}}</td>
-      <td><button (click)="seen(i)" >Read</button></td>
+      <td *ngIf="book.read">{{book.name}}</td>
+      <td *ngIf="book.read"><button (click)="seen(i)" >Read</button></td>
     </tr>
   </table>
   <a routerLink="/add-book">Seen page</a><br>
