@@ -1,13 +1,11 @@
-<div class="text-info text-center">
-  <button [routerLink]="'/create-book'" >Complete book</button>
+<div class="text-center">
   <table border="1" style="width: 70%">
     <tr>
-      <td><h3>Reading List</h3></td>
-      <td></td>
+      <td colspan="2"><h3>Complete Book</h3></td>
     </tr>
     <tr *ngFor="let book of bookList,index as i">
-      <td [ngClass]="book.check === true ? 'done' : '' ">{{book.name}}</td>
-      <td><button>Read</button></td>
+      <td [ngClass]="book.check !== true ? 'done' : '' ">{{book.name}}</td>
+      <td>Completed</td>
     </tr>
   </table>
 </div>

@@ -25,16 +25,13 @@ export class HomeComponent implements OnInit {
 
   seen(i) {
     const book = this.bookList[i];
-    book.check = !book.check;
-
-    return this.bookService.editBook(book).subscribe(
+    const bookData = {
+      ...book,
+      check: !book.check
+    };
+    this.bookService.editBook(bookData).subscribe(
       next => {
-        alert('Completed');
-        document.location.reload();
-      }, error => {
-        alert('error');
-      }
-    );
+        this.bookList[i].check = next.check;
+      });
   }
-
 }

@@ -13,6 +13,13 @@ export class AddBookComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
+    this.bookService.getBookList().subscribe(
+      result => {
+        this.bookList = result;
+      }, error => {
+        alert('Error');
+      }
+    );
   }
 
 }
